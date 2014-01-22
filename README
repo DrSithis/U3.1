@@ -1,0 +1,24 @@
+//**************************//
+//**************************//
+//**********README**********//
+//**************************//
+//**************************//
+//***Identifiant Blog PHP***//
+  Username : root@localhost
+  Password : 123456
+//**************************//
+//**************************//
+//*********Attention********//
+N'oubliez pas de changer les 
+identifiants de connexion à
+la base de donnée, dans le 
+fichier situé :	
+    "./core/db/config.php"
+//**************************//
+Si l'affichage des pages se 
+passe mal, veillez vérifier
+les droits de permission des 
+dossiers de Smarty. Il faut
+autorisé la lecture et l'écr-
+iture.
+//**************************//

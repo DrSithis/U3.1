@@ -1,0 +1,1 @@
+<?php require_once('core/core.php');$id=(int)var_get('id');$delete_sql="DELETE FROM article WHERE Id=$id";mysql_query($delete_sql);$_SESSION['article']='supprimé';header('location: index.php');exit;
