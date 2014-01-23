@@ -16,7 +16,14 @@
   <body>
     <div class="container">
       <div class="content">
-        <div class="page-header well"><h1><a href="index.php">Blog php - Hoflack David</a></h1></div>
+        <div class="page-header well">
+            <h1 style="float: left"><a href="index.php">Blog php - Hoflack David</a></h1>
+            <form action="index.php" method="get" id="search">
+                <input type="text" name="r" placeholder="informatique, ubuntu..." value="" 
+                       class="span2">&nbsp;
+                <input type="submit" value="Search" class="btn btn-info" id="btnsearch">                      
+            </form>
+        </div>
         <div class="row">
           <div class="span8" style="margin-left: 2%;">
               <?php require_once(INC . 'notification.php');

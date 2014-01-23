@@ -26,9 +26,9 @@ if(!empty($search)){
     $count= mysql_fetch_array($a);
     if ($count['total'] != 0) {
         $s = $count['total'] != 1 ? 's' : '';
-        echo '<h2> Resultat' . $s . ' de la Recherche </h2><br><br>';
+        echo '<h2> Resultat' . $s . ' de la Recherche </h2><hr style="height:7px;background-color: rgb(69, 81, 95);">';
     } else {
-        echo '<h2> Aucun Resultat </h2><br><br>';
+        echo '<h2> Aucun Resultat </h2>';
     }
 }
 //**End Search**//
@@ -38,7 +38,7 @@ else{
     $data_sql = mysql_query("SELECT article.Id,Titre,Texte,Date,tags.Nom FROM article "
                           . "INNER JOIN `tags` ON `article`.`Tag` = `tags`.`Id`"
                           . "ORDER BY date DESC LIMIT ". $start .",". $app ."; ");
-    echo '<h2>Derniers articles</h2><br><br>';
+    echo '<h2>Derniers articles</h2><hr style="height:7px;background-color: rgb(69, 81, 95);">';
 }
 $data_list = array();
 $i = 0;

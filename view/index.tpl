@@ -1,12 +1,18 @@
-{foreach from=$data item=data_i} 
-    {include file='view/partial/_article.tpl' article=$data_i}
-{/foreach}
+<div>
+    {foreach from=$data item=data_i} 
+        <div class="article">
+           {include file='view/partial/_article.tpl' article=$data_i} 
+           <hr>
+        </div>
+    {/foreach} 
+</div>
+
 
 <br><br>
 
-<div id="pagination">
+<div class="pagination pagination-large pagination-centered">
    {if $page neq 1}
-        <a href='{$minuspage}'> Précedent</a> -
+        <a href='{$minuspage}'> Précedent</a>
     {/if}
     {for $l=1 to $nbpage}
         {if $page eq $l}
@@ -19,7 +25,7 @@
         {/for}
 
     {if $page neq $nbpage}
-    - <a href='{$somepage}'> Suivant</a>
+    <a href='{$somepage}'> Suivant</a>
     {/if} 
 </div>
 
