@@ -22,5 +22,5 @@ $connect=FALSE;
 if(isset($_COOKIE['sid'])){
     $sid = $_COOKIE['sid'];
     $sid_sql= mysql_query("SELECT * FROM utilisateurs WHERE sid= '$sid'");
-    if(mysql_fetch_array($sid_sql)){$connect=TRUE;}
+    if($infoconnect = mysql_fetch_array($sid_sql)){$connect=TRUE; $email=$infoconnect['email'];}
 }

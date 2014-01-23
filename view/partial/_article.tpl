@@ -1,7 +1,7 @@
 <div class="{if $data_i.Image} articleifimg {/if}">
 
-    <div class="fondbleu"><h2>{$data_i.Titre}<span style="font-size: 10px; padding-left:5%;">Date : {$data_i.Date|date_format:'%d/%m/%Y'}</span></h2></div>
-    <h3 style='font-size: 10px;'>Tag : <span style="">{$data_i.Nom}</span></h3><br><br>
+    <div class="fondbleu"><h2>{$data_i.Titre}<br><span style="font-size: 10px; padding-left:5%;">Date : {$data_i.Date|date_format:'%d/%m/%Y'}</span></h2></div>
+    <h3 style='font-size: 10px;'>Tag : <span style="">{$data_i.Nom}</span></h3><br><br><br><br>
     <div>
         {if $data_i.Image}
             <a href="{$data_i.Image}" style="">
