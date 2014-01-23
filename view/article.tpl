@@ -1,22 +1,26 @@
-<form action="article.php" name="formulaire" method="POST">
+<form action="article.php" name="formulaire" method="POST" enctype="multipart/form-data">
     <div class="clearfix">
-        <label for="title">Titre</label>
+        <label for="title">Titre :</label>
         <div class="input"> 
             <input type="text" name="titre" id="titre" value="{$title}">
         </div>
     </div>    
     <div class="clearfix">
-        <label for="texte">Texte</label>
+        <label for="texte">Texte :</label>
         <div class="input">
             <textarea name="texte" id="texte">{$content}</textarea>
         </div>
     </div> 
     <div class="clearfix">
-        <label for="tag">Tag (1seul)</label>
+        <label for="tag">Tag (1seul) :</label>
         <div class="input">
             <input type="text" name="tag" id="tag" value="{$tag}">
         </div>
-    </div>     
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Image :</span></br>
+        <input type="file" name="image" id="image" />
+    </div>
     <div class="form-action">
         <input name="id" type="hidden" value="{$id}" >
         <input name="change" type="hidden" value="{$change}" >

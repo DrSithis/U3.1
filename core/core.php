@@ -10,6 +10,7 @@ define('VIEW', ROOT_PATH . 'view/');
 define('INC', CORE . 'include/');
 define('DB', CORE . 'db/');
 define('FUNC', CORE . 'function/');
+define('DATA', ROOT_PATH .'data/');
 
 require_once( DB . 'connect_mysql.php');
 //require_once( DB . 'connect_pdo.php');
