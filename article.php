@@ -40,43 +40,40 @@ if (!empty($_POST) && !empty($_POST['bt'])){
         requete_notif($update_sql,'article','modifié');
     } 
     else {
-//        if ($_FILES['image']['error'] > 0){
-//            notif('article','Erreur lors du transfert');
-//            header("Location: index.php");exit;
-//        }
+        if ($_FILES['image']['error'] > 0){
+            notif('article','Erreur lors du transfert');
+            header("Location: index.php");exit;
+        }
         $date = mysql_real_escape_string(time());
+        //**Start Module Tags**/
         $tag_sql = "SELECT Id FROM tags WHERE Nom = '$tag'";
         $tag_req = mysql_query($tag_sql);
         if(mysql_numrows($tag_req)==1){$idtag=mysql_result($tag_req,0,0);}
         else{ 
            $inserttag_sql="INSERT INTO tags (Nom) VALUES ('$tag')";
            $inserttag=mysql_query($inserttag_sql);
-//           $idtag=mysql_insert_id();
+//           $idtag=mysql_insert_id(); //Bug avec l'upload de fichier, bug connu, passage à mysqli pour le regler! https://bugs.php.net/bug.php?id=2742
            $inserttagid_sql="SELECT Id FROM tags WHERE Nom='$tag'";
            $inserttagid=  mysql_query($inserttagid_sql);
            $idtag=mysql_result($inserttagid,0,0);
         }
-        $idtag = (int) $idtag;   
+        $idtag = (int) $idtag;
+        //**End Module Tags**/
         $insertarticle_sql = "INSERT INTO article(Titre, Texte, Date, Tag) VALUES('$titre','$content','$date','$idtag')";
         requete_notif($insertarticle_sql,'article','ajouté');
-        
-       
 //        $idarticle=  mysql_insert_id();
-        
+        //**Start ID Article Insert**/
         $insertarticleid_sql="SELECT Id FROM article WHERE Titre='$titre' AND Texte='$content'";
         $insertarticleid=mysql_query($insertarticleid_sql);
         $idarticle=mysql_result($insertarticleid,0,0);
-           
-           
-        echo $insertarticle_sql;br();
-         
-        
+        //**End ID Article Insert**/
+//        echo $insertarticle_sql;br();
         $src = $_FILES["image"]["tmp_name"];
         $dest = DATA . "images/$idarticle.jpg";
-        echo $idarticle;br();echo $src;br();echo $dest;
+//        echo $idarticle;br();echo $src;br();echo $dest;
         move_uploaded_file($src, $dest);
      }    
-//    header('location: index.php');exit;
+    header('location: index.php');exit;
 }
 //**End Usage Form**//
  

@@ -43,7 +43,8 @@ else{
 $data_list = array();
 $i = 0;
 while($data=mysql_fetch_array($data_sql)){
-    $data_list[$i]['image'] = (file_exists(ASSETS."images/".$data['id'].".jpg")) ? ASSETS."images/".$data['id'].".jpg" : false;
+    $data_list[$i]['Image'] = (file_exists(dirname(__FILE__)."/data/images/".$data['Id'].".jpg")) ? "./data/images/".$data['Id'].".jpg" : false;
+//    if(file_exists(DATA . 'images/'.$data['id'].'.jpg')){$data_list[$i]['Image'] = DATA . 'images/'.$data['id'].'.jpg';}
     $data_list[$i]['Titre'] = $data['Titre'];
     $data_list[$i]['Id'] = $data['Id'];
     $data_list[$i]['Texte'] = $data['Texte'];

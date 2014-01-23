@@ -28,8 +28,8 @@ body{margin: auto;}
     margin-left: 670px;
 }
 
-.article{
-    
+.articleifimg{
+    height: 300px;
 }
 
 .fondbleu{
@@ -43,3 +43,4 @@ body{margin: auto;}
 .fondbleu>h2{
         margin-left:5%;
 }
+

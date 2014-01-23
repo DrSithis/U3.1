@@ -1,9 +1,9 @@
 <div>
     {foreach from=$data item=data_i} 
-        <div class="article">
+        
            {include file='view/partial/_article.tpl' article=$data_i} 
-           <hr>
-        </div>
+        </div><br>
+        <hr>
     {/foreach} 
 </div>
 
