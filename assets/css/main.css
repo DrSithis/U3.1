@@ -29,7 +29,7 @@ body{margin: auto;}
 }
 
 .articleifimg{
-    height: 300px;
+    min-height: 300px;
 }
 
 .fondbleu{
