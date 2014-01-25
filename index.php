@@ -21,7 +21,7 @@ $tpl->assign('somepage','index.php?p='.($page + 1));
 $start = round(($app*$page)-$app);
 $search = mysql_real_escape_string(var_get('r'));
 if(!empty($search)){    
-    $data_sql = mysql_query("SELECT * FROM article  WHERE Titre LIKE '%$search%' ORDER BY date DESC");
+    $data_sql = mysql_query("SELECT article.Id,Titre,Texte,Date,tags.Nom FROM article INNER JOIN `tags` ON `article`.`Tag` = `tags`.`Id`  WHERE Titre LIKE '%$search%' ORDER BY date DESC");
     $count_sql=mysql_query("SELECT COUNT(*) AS total FROM article  WHERE Titre LIKE '%$search%'");
     $count= mysql_fetch_array($a);
     if ($count['total'] != 0) {
@@ -44,7 +44,6 @@ $data_list = array();
 $i = 0;
 while($data=mysql_fetch_array($data_sql)){
     $data_list[$i]['Image'] = (file_exists(dirname(__FILE__)."/data/images/".$data['Id'].".jpg")) ? "./data/images/".$data['Id'].".jpg" : false;
-//    if(file_exists(DATA . 'images/'.$data['id'].'.jpg')){$data_list[$i]['Image'] = DATA . 'images/'.$data['id'].'.jpg';}
     $data_list[$i]['Titre'] = $data['Titre'];
     $data_list[$i]['Id'] = $data['Id'];
     $data_list[$i]['Texte'] = $data['Texte'];
