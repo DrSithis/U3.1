@@ -4,8 +4,8 @@
             'engine' => 'mysql',
             'options' => array(
                 'hostname' => 'localhost',
-                'username' => 'root',
-                'password' => 'emilie',
+                'username' => 'blog',
+                'password' => 'spSFY7vHTdbEh',
                 'database' => 'blogphp'
                 ),
             'table_prefix' => '',
